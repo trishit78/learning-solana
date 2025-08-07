@@ -22,24 +22,28 @@ if (!suppliedToPubkey) {
 
 const senderKeypair = getKeypairFromEnvironment("SECRET_KEY");
 
+
+console.log(senderKeypair.publicKey.toBase58())
+//DwFyTKEXoeEq6PnCkHVTvfWtu31KbCWCTfRzFYz9CS9L
+console.log('gap')
 console.log(suppliedToPubkey);
 
 const toPubkey = new PublicKey(suppliedToPubkey);
 
 const connection = new Connection("https://api.devnet.solana.com", "confirmed");
-const LAMPORTS_TO_SEND = 5000;
+const LAMPORTS_TO_SEND = 10000000;
 
 console.log("done");
 
 const main = async () => {
   try {
-    await airdropIfRequired(
-      connection,
-      senderKeypair.publicKey,
-      1 * LAMPORTS_PER_SOL, // Amount to airdrop if needed
-      0.5 * LAMPORTS_PER_SOL // Minimum balance threshold
-    );
-    console.log("airdrop done");
+    // await airdropIfRequired(
+    //   connection,
+    //   senderKeypair.publicKey,
+    //   1 * LAMPORTS_PER_SOL, // Amount to airdrop if needed
+    //   0.5 * LAMPORTS_PER_SOL // Minimum balance threshold
+    // );
+    // console.log("airdrop done");
 
     const transaction = new Transaction();
 
