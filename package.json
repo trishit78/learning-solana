@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@solana-developers/helpers": "^2.3.0",
     "@solana/web3.js": "^1.98.4",
